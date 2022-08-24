@@ -1,31 +1,48 @@
-let opcion = prompt("Opcion A para tabla de multiplicar \nOpcion B para cotizar dolar a pesos Argentinos  "  )
+class Promedio{
+    constructor(materia ,nota){
+        this.materia = materia;
+        this.nota = nota; 
 
-switch(opcion){
-    case "A" :  
-    let numero = parseInt( prompt("Ingresa un numero para saber si tabla") );
+    }
 
-        
-            for (let i=0; i <= 10 ; i++){
-                let resultado = numero *i; 
-                document.write(`${numero} x ${i} = ${resultado}  <br/>  `)
-            
-        
-            
-            }
-        break; 
     
-
-case "B":
-    let dolar_pesos = parseInt( prompt("ingresa el valor que queres calcular"));
-    let dolar = 288;
-
-    let cotizacion = dolar_pesos* dolar;
-    document.write( "$ " + cotizacion +" Pesos Argentinos" )
-    break;
-
-
-default :
-alert("Elegi papi, A o B" );
-break;
 }
+
+lista_materias =[];
+lista_de_notas = [];
+for(let i= 0  ; i <3 ; i++){
+    let materia = prompt("ingresa materia");
+    let nota = parseInt( prompt("ingresa nota"));
+    
+    let ingreso_datos = new Promedio(materia, nota);
+    lista_materias.push(ingreso_datos);
+
+}
+console.log(lista_materias);
+
+
+/*-------------------------------------------*/
+for(numero of lista_materias){
+    lista_de_notas.push(numero.nota)
+}
+console.log(lista_de_notas);
+/*--------------------------------------------------*/
+
+
+let sum = 0
+for(let j = 0 ; j>lista_de_notas.lenght;j++){
+    
+    sum += lista_de_notas[j]
+    
+}
+
+ console.log(sum);
+
+ alert("El promedio es de : " + sum/lista_de_notas.lenght);
+
+
+
+
+
+
 
